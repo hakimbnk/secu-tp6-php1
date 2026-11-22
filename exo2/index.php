@@ -1,5 +1,4 @@
 <?php
-// Tableau associatif  slide ??
 
 $serveurs = [
     "api-01"   => ["cpu" => 45, "ram" => 60, "status" => "1"],
@@ -41,9 +40,9 @@ function estCritique($cpu, $ram) {
         <?php
         // boucle foreach : slide 69
         foreach ($serveurs as $nom => $Val) {
-            $cpu = $val["cpu"];
-            $ram = $val["ram"];
-            $online = ($val["status"] === "1");
+            $cpu =$Val["cpu"];
+            $ram = $Val["ram"];
+            $online = ($Val["status"] === "1");
 
             $score = calculerScore($cpu, $ram);
             $critique = estCritique($cpu, $ram);
@@ -98,6 +97,6 @@ function estCritique($cpu, $ram) {
     <p>Serveurs online: <span id="total_online_servers"><?php echo $totalOnline; ?></span></p>
     <p>Score moyen: <span id="moy_scores"><?php echo $moyScores; ?></span></p>
     <p>Meilleur serveur: <span id="best_serv"><?php echo $bestServ . " (" . $bestScore . ")"; ?></span></p>
-    
+
 </body>
 </html>
